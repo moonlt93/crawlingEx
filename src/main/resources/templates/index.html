@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.js"
+          integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+          crossorigin="anonymous"></script>
+</head>
+<body>
+<h1>인덱스 페이지</h1>
+<form th:action="@{/info/detail}" id="form" method="post">
+<label for="id">
+     <input id ="id" name="streamId" placeholder="스트리머의 아이디를 입력해주세요" required>
+    <button type="submit">입력</button>
+    <button onclick="plusInput()">+</button>
+</label>
+</form>
+
+<script>
+
+    function plusInput(){
+        const box = document.getElementById("form");
+        const newP = document.createElement('p');
+        newP.innerHTML="<input id =\"id\" name=\"streamId\" placeholder=\"스트리머의 아이디를 입력해주세요\" required>";
+        box.appendChild(newP);
+    }
+</script>
+</body>
+</html>
